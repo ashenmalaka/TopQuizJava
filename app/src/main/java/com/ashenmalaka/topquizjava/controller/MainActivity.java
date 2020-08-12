@@ -12,12 +12,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.ashenmalaka.topquizjava.R;
+import com.ashenmalaka.topquizjava.model.User;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mGreetingTextView;
     private EditText mNameInput;
     private Button mPlayButton;
+
+    private User mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         mGreetingTextView = (TextView) findViewById(R.id.activity_main_greeting_txt);
         mNameInput = (EditText) findViewById(R.id.activity_main_name_input);
         mPlayButton = (Button) findViewById(R.id.activity_main_play_btn);
+        mUser = new User();
 
         mPlayButton.setEnabled(false);
 
@@ -50,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         mNameInput.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String firstName = mNameInput.getText().toString();
+                mUser.setFirstName(firstName);
                 Intent gameActivity = new Intent(MainActivity.this, GameActivity.class);
                 startActivity(gameActivity);
             }
