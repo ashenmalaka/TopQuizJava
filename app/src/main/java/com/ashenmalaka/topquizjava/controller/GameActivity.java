@@ -1,10 +1,12 @@
-package com.ashenmalaka.topquizjava;
+package com.ashenmalaka.topquizjava.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.ashenmalaka.topquizjava.R;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -20,10 +22,10 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        mQuestionTextView = findViewById(R.id.activity_game_question_text);
-        mAnswerOneButton = findViewById(R.id.activity_game_answer1_btn);
-        mAnswerTwoButton = findViewById(R.id.activity_game_answer2_btn);
-        mAnswerThreeButton = findViewById(R.id.activity_game_answer3_btn);
-        mAnswerFourButton = findViewById(R.id.activity_game_answer4_btn);
+        mQuestionTextView = (TextView) findViewById(R.id.activity_game_question_text);
+        mAnswerOneButton = (Button) findViewById(R.id.activity_game_answer1_btn);
+        mAnswerTwoButton = (Button) findViewById(R.id.activity_game_answer2_btn);
+        mAnswerThreeButton = (Button) findViewById(R.id.activity_game_answer3_btn);
+        mAnswerFourButton = (Button) findViewById(R.id.activity_game_answer4_btn);
     }
 }
