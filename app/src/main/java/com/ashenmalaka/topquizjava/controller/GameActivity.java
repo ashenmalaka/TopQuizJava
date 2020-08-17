@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ashenmalaka.topquizjava.R;
 import com.ashenmalaka.topquizjava.model.Question;
@@ -22,6 +23,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private Button mAnswerFourButton;
 
     private QuestionBank mQuestionBank;
+    private Question mCurrentQuestion;
 
 
     @Override
@@ -72,5 +74,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         int responseIndex = (int) v.getTag();
+
+        if(responseIndex == mCurrentQuestion.getAnswerIndex()){
+            Toast.makeText(GameActivity.this, "Good Job!", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(GameActivity.this, "That's wrong!!!", Toast.LENGTH_LONG).show();
+        }
     }
 }
