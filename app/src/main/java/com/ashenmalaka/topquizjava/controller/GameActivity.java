@@ -35,6 +35,11 @@ public class GameActivity extends AppCompatActivity {
         mAnswerThreeButton = (Button) findViewById(R.id.activity_game_answer3_btn);
         mAnswerFourButton = (Button) findViewById(R.id.activity_game_answer4_btn);
 
+        mAnswerOneButton.setTag(0);
+        mAnswerTwoButton.setTag(1);
+        mAnswerThreeButton.setTag(2);
+        mAnswerFourButton.setTag(3);
+
     }
 
     private QuestionBank generateQuestions(){
