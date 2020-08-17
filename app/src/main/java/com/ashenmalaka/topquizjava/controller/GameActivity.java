@@ -48,6 +48,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mAnswerThreeButton.setOnClickListener(this);
         mAnswerFourButton.setOnClickListener(this);
 
+        for(View button : new View[] {mAnswerFourButton, mAnswerThreeButton, mAnswerTwoButton,mAnswerOneButton}){
+            button.setOnClickListener(GameActivity.this);
+        }
+
+        mCurrentQuestion = mQuestionBank.getQuestion();
+        this.displayQuestions(mCurrentQuestion);
+
     }
 
     private QuestionBank generateQuestions(){
@@ -71,6 +78,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mAnswerFourButton.setText(question.getChoicelist().get(3));
     }
 
+    //region OnClickListener Implementation
     @Override
     public void onClick(View v) {
         int responseIndex = (int) v.getTag();
@@ -81,4 +89,5 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(GameActivity.this, "That's wrong!!!", Toast.LENGTH_LONG).show();
         }
     }
+    //endregion
 }
