@@ -4,13 +4,13 @@ import java.util.List;
 
 public class Question {
     private String mQuestion;
-    private List<String> mChoicelist;
+    private List<String> mChoiceList;
     private int mAnswerIndex;
 
-    public Question(String question, List<String> choicelist, int answerIndex) {
-        mQuestion = question;
-        mChoicelist = choicelist;
-        mAnswerIndex = answerIndex;
+    public Question(String question, List<String> choiceList, int answerIndex) {
+        this.setQuestion(question);
+        this.setChoiceList(choiceList);
+        this.setAnswerIndex(answerIndex);
     }
 
     public String getQuestion() {
@@ -21,15 +21,15 @@ public class Question {
         mQuestion = question;
     }
 
-    public List<String> getChoicelist() {
-        return mChoicelist;
+    public List<String> getChoiceList() {
+        return mChoiceList;
     }
 
-    public void setChoicelist(List<String> choicelist) {
-        if(choicelist == null){
+    public void setChoiceList(List<String> choiceList) {
+        if(choiceList == null){
             throw new IllegalArgumentException("Array can not be null");
         }
-        mChoicelist = choicelist;
+        mChoiceList = choiceList;
     }
 
     public int getAnswerIndex() {
@@ -37,7 +37,7 @@ public class Question {
     }
 
     public void setAnswerIndex(int answerIndex) {
-        if(answerIndex < 0 || answerIndex > mChoicelist.size()){
+        if(answerIndex < 0 || answerIndex > mChoiceList.size()){
             throw new IllegalArgumentException("Answer index is out of bound");
         }
         mAnswerIndex = answerIndex;

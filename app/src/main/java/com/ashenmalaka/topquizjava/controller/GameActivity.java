@@ -48,7 +48,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mAnswerThreeButton.setOnClickListener(this);
         mAnswerFourButton.setOnClickListener(this);
 
-        for(View button : new View[] {mAnswerFourButton, mAnswerThreeButton, mAnswerTwoButton,mAnswerOneButton}){
+        for(View button : new View[] {mAnswerFourButton, mAnswerThreeButton, mAnswerTwoButton, mAnswerOneButton}){
             button.setOnClickListener(GameActivity.this);
         }
 
@@ -72,10 +72,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     private void displayQuestions(final Question question){
         mQuestionTextView.setText(question.getQuestion());
-        mAnswerOneButton.setText(question.getChoicelist().get(0));
-        mAnswerTwoButton.setText(question.getChoicelist().get(1));
-        mAnswerThreeButton.setText(question.getChoicelist().get(2));
-        mAnswerFourButton.setText(question.getChoicelist().get(3));
+        mAnswerOneButton.setText(question.getChoiceList().get(0));
+        mAnswerTwoButton.setText(question.getChoiceList().get(1));
+        mAnswerThreeButton.setText(question.getChoiceList().get(2));
+        mAnswerFourButton.setText(question.getChoiceList().get(3));
     }
 
     //region OnClickListener Implementation
