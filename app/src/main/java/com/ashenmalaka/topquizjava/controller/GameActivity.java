@@ -3,6 +3,7 @@ package com.ashenmalaka.topquizjava.controller;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -12,7 +13,7 @@ import com.ashenmalaka.topquizjava.model.QuestionBank;
 
 import java.util.Arrays;
 
-public class GameActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView mQuestionTextView;
     private Button mAnswerOneButton;
@@ -40,6 +41,11 @@ public class GameActivity extends AppCompatActivity {
         mAnswerThreeButton.setTag(2);
         mAnswerFourButton.setTag(3);
 
+        mAnswerOneButton.setOnClickListener(this);
+        mAnswerTwoButton.setOnClickListener(this);
+        mAnswerThreeButton.setOnClickListener(this);
+        mAnswerFourButton.setOnClickListener(this);
+
     }
 
     private QuestionBank generateQuestions(){
@@ -61,5 +67,10 @@ public class GameActivity extends AppCompatActivity {
         mAnswerTwoButton.setText(question.getChoicelist().get(1));
         mAnswerThreeButton.setText(question.getChoicelist().get(2));
         mAnswerFourButton.setText(question.getChoicelist().get(3));
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
