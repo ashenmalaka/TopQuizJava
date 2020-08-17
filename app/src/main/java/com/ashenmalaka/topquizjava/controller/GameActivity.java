@@ -49,4 +49,12 @@ public class GameActivity extends AppCompatActivity {
 
         return new QuestionBank(Arrays.asList(question1, question2, question3));
     }
+
+    private void displayQuestions(final Question question){
+        mQuestionTextView.setText(question.getQuestion());
+        mAnswerOneButton.setText(question.getChoicelist().get(0));
+        mAnswerTwoButton.setText(question.getChoicelist().get(1));
+        mAnswerThreeButton.setText(question.getChoicelist().get(2));
+        mAnswerFourButton.setText(question.getChoicelist().get(3));
+    }
 }
